@@ -1,130 +1,182 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family: Arial, sans-serif;
-    background:#0f172a;
-    color:#ffffff;
-    line-height:1.6;
+font-family:Segoe UI,sans-serif;
+background:#07152f;
+color:white;
+line-height:1.7;
 }
 
 .hero{
-    background:url('hero-banner.jpg') center center/cover no-repeat;
-    min-height:600px;
-    display:flex;
-    align-items:center;
+height:90vh;
+background:url('Banner_Nilesh Solanki.png');
+background-size:cover;
+background-position:center;
+position:relative;
 }
 
 .overlay{
-    background:rgba(0,0,0,0.65);
-    width:100%;
-    padding:80px;
+background:rgba(0,0,0,.55);
+height:100%;
+display:flex;
+align-items:center;
+}
+
+.hero-content{
+max-width:650px;
+padding-left:7%;
 }
 
 .hero h1{
-    font-size:4rem;
-    margin-bottom:10px;
+font-size:4rem;
+font-weight:700;
+margin-bottom:20px;
 }
 
 .hero h2{
-    font-size:1.5rem;
-    font-weight:400;
-    color:#cbd5e1;
-    margin-bottom:20px;
+font-size:1.8rem;
+font-weight:400;
+margin-bottom:25px;
+line-height:1.5;
 }
 
 .hero p{
-    max-width:700px;
-    margin-bottom:30px;
-    color:#e2e8f0;
+font-size:1.15rem;
+margin-bottom:30px;
 }
 
-.buttons a{
-    display:inline-block;
-    padding:12px 24px;
-    margin-right:10px;
-    text-decoration:none;
-    border-radius:6px;
-    background:#14b8a6;
-    color:white;
-    font-weight:bold;
+.hero-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
 }
 
-.buttons a:hover{
-    background:#0f766e;
+.hero-buttons a,
+.portfolio-btn{
+background:#14d9cf;
+color:#001;
+padding:14px 26px;
+border-radius:8px;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
 }
 
-section{
-    max-width:1200px;
-    margin:auto;
-    padding:60px 20px;
+.hero-buttons a:hover,
+.portfolio-btn:hover{
+transform:translateY(-3px);
 }
 
-section h2{
-    margin-bottom:30px;
-    text-align:center;
-    font-size:2rem;
+.section{
+padding:90px 8%;
 }
 
-.project-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
+.section h2{
+text-align:center;
+font-size:2.6rem;
+margin-bottom:50px;
 }
 
-.card{
-    background:#1e293b;
-    padding:25px;
-    border-radius:12px;
-    transition:0.3s;
+.about-text{
+max-width:900px;
+margin:auto;
+text-align:center;
+font-size:1.15rem;
 }
 
-.card:hover{
-    transform:translateY(-5px);
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
 }
 
-.card h3{
-    margin-bottom:15px;
+.project-card{
+background:#162742;
+border-radius:14px;
+overflow:hidden;
+transition:.3s;
 }
 
-.card p{
-    color:#cbd5e1;
-    margin-bottom:20px;
+.project-card:hover{
+transform:translateY(-8px);
 }
 
-.card a{
-    color:#14b8a6;
-    text-decoration:none;
-    font-weight:bold;
+.project-card img{
+width:100%;
+height:220px;
+object-fit:cover;
 }
 
-.skills ul{
-    list-style:none;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:15px;
+.project-card h3{
+padding:20px 20px 10px;
 }
 
-.skills li{
-    background:#1e293b;
-    padding:15px;
-    border-radius:8px;
+.project-card p{
+padding:0 20px 20px;
+}
+
+.project-card a{
+display:inline-block;
+margin:0 20px 25px;
+color:#14d9cf;
+text-decoration:none;
+font-weight:600;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.skills-grid div{
+background:#162742;
+padding:25px;
+border-radius:10px;
+text-align:center;
+}
+
+.design-portfolio{
+text-align:center;
 }
 
 .contact{
-    text-align:center;
+text-align:center;
 }
 
 .contact a{
-    color:#14b8a6;
-    text-decoration:none;
+color:#14d9cf;
+text-decoration:none;
 }
 
 footer{
-    text-align:center;
-    padding:30px;
-    color:#94a3b8;
+text-align:center;
+padding:30px;
+background:#051024;
+margin-top:40px;
+}
+
+@media(max-width:768px){
+
+.hero{
+height:auto;
+padding:100px 0;
+}
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.hero h2{
+font-size:1.3rem;
+}
+
+.hero-content{
+padding:40px;
+}
+
 }
