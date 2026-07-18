@@ -1032,3 +1032,229 @@ font-size:1.25rem;
     }
 
 }
+
+/* ==========================================
+   MOBILE HERO OPTIMIZATION
+   Keeps desktop unchanged
+========================================== */
+
+@media(max-width:768px){
+
+    .hero{
+        height:auto;
+        min-height:100svh;
+
+        padding:
+        calc(55px + env(safe-area-inset-top))
+        0
+        60px;
+
+        /* Reposition banner artwork on mobile */
+        background-position:68% center;
+
+        align-items:flex-start;
+
+        position:relative;
+        isolation:isolate;
+    }
+
+    /* Strong mobile overlay so banner graphics
+       never compete with hero text */
+
+    .hero::before{
+        content:"";
+
+        position:absolute;
+        inset:0;
+
+        background:
+        linear-gradient(
+            180deg,
+            rgba(0,10,30,.72) 0%,
+            rgba(0,10,30,.88) 42%,
+            rgba(0,10,30,.96) 100%
+        );
+
+        z-index:0;
+        pointer-events:none;
+    }
+
+    .hero-content{
+        position:relative;
+        z-index:2;
+
+        width:100%;
+        max-width:100%;
+
+        padding:0 7%;
+    }
+
+    .hero h1{
+        font-size:clamp(3rem,14vw,4.2rem);
+        line-height:.95;
+
+        margin-bottom:25px;
+
+        max-width:100%;
+    }
+
+    .hero-accent{
+        width:85px;
+        height:4px;
+
+        margin-bottom:28px;
+    }
+
+    .hero h2{
+        font-size:clamp(1.45rem,6vw,2rem);
+        line-height:1.35;
+
+        margin-bottom:24px;
+
+        max-width:100%;
+    }
+
+    .hero p{
+        font-size:1rem;
+        line-height:1.75;
+
+        color:#f0f4f7;
+
+        margin-bottom:30px;
+
+        max-width:100%;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:stretch;
+
+        width:100%;
+
+        gap:14px;
+        margin-top:30px;
+    }
+
+    .hero-buttons .btn-primary{
+        width:100%;
+
+        justify-content:center;
+
+        padding:15px 20px;
+
+        text-align:center;
+    }
+
+}
+
+
+/* ==========================================
+   EXTRA SMALL MOBILE HERO
+========================================== */
+
+@media(max-width:480px){
+
+    .hero{
+        background-position:72% center;
+    }
+
+    .hero-content{
+        padding:0 7%;
+    }
+
+    .hero h1{
+        font-size:3.2rem;
+    }
+
+    .hero h2{
+        font-size:1.4rem;
+    }
+
+}
+
+
+/* ==========================================
+   FLOATING BACK TO TOP BUTTON
+========================================== */
+
+.back-to-top{
+
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:52px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#35d6e7;
+    color:#041b42;
+
+    border:none;
+    border-radius:50%;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.30),
+    0 0 20px rgba(53,214,231,.18);
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(15px);
+
+    transition:
+    opacity .3s ease,
+    visibility .3s ease,
+    transform .3s ease,
+    box-shadow .3s ease;
+
+    z-index:9990;
+}
+
+
+.back-to-top.show{
+
+    opacity:1;
+    visibility:visible;
+
+    transform:translateY(0);
+}
+
+
+.back-to-top:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.35),
+    0 0 25px rgba(53,214,231,.30);
+}
+
+
+/* Mobile back-to-top */
+
+@media(max-width:768px){
+
+    .back-to-top{
+
+        right:18px;
+
+        /* Better spacing on iPhones */
+        bottom:
+        calc(18px + env(safe-area-inset-bottom));
+
+        width:48px;
+        height:48px;
+
+        font-size:18px;
+    }
+
+}
