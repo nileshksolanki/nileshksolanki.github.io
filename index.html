@@ -450,45 +450,72 @@ interaction design, and immersive learning experiences today.
 
 <div class="creative-grid">
 
-<div class="creative-card">
-<img src="creative-portfolio/motion-fashion-animation.gif"
-     alt="Creative Motion and Animation Work">
-<div class="creative-card-content">
-<h4>Motion & Visual Experimentation</h4>
-<p>
-Exploration of motion, compositing, visual effects,
-and multimedia-driven creative design.
-</p>
-</div>
-</div>
-
-<div class="creative-card">
-<img src="creative-portfolio/motion-character-animation.gif"
-     alt="Character Animation">
-<div class="creative-card-content">
-<h4>Character Animation</h4>
-<p>
-Character-based animation exploring movement,
-visual styling, and digital storytelling.
-</p>
-</div>
-</div>
+<!-- FASHION / MOTION -->
 
 <div class="creative-card">
 
-<video controls preload="metadata">
-<source src="creative-portfolio/amazon-contact-tenets-video.mp4" type="video/mp4">
+<video autoplay muted loop playsinline preload="metadata">
+<source src="creative-portfolio/motion-fashion-animation.mp4"
+        type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
 <div class="creative-card-content">
+
+<h4>Motion & Visual Experimentation</h4>
+
+<p>
+Exploration of motion, compositing, visual effects,
+and multimedia-driven creative design.
+</p>
+
+</div>
+</div>
+
+
+<!-- CHARACTER ANIMATION -->
+
+<div class="creative-card">
+
+<video autoplay muted loop playsinline preload="metadata">
+<source src="creative-portfolio/motion-character-animation.mp4"
+        type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+<div class="creative-card-content">
+
+<h4>Character Animation</h4>
+
+<p>
+Character-based animation exploring movement,
+visual styling, and digital storytelling.
+</p>
+
+</div>
+</div>
+
+
+<!-- INTERACTIVE LEARNING MEDIA -->
+
+<div class="creative-card">
+
+<video controls preload="metadata">
+<source src="creative-portfolio/amazon-contact-tenets-video.mp4"
+        type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+<div class="creative-card-content">
+
 <h4>Interactive Learning Media</h4>
+
 <p>
 Motion-based visual developed for an interactive
 digital learning experience.
 </p>
-</div>
 
+</div>
 </div>
 
 </div>
@@ -743,6 +770,104 @@ View LinkedIn Profile
 </p>
 
 </footer>
+
+
+<!-- IMAGE LIGHTBOX -->
+
+<div id="imageLightbox" class="lightbox">
+
+    <button class="lightbox-close"
+            aria-label="Close image">
+        &times;
+    </button>
+
+    <img id="lightboxImage"
+         src=""
+         alt="Full-size portfolio preview">
+
+</div>
+
+
+<!-- LIGHTBOX JAVASCRIPT -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const lightbox = document.getElementById("imageLightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const closeButton = document.querySelector(".lightbox-close");
+
+    /* Only images inside Creative & Multimedia portfolio */
+    const portfolioImages = document.querySelectorAll(
+        ".creative-card img"
+    );
+
+    portfolioImages.forEach(function (image) {
+
+        image.classList.add("lightbox-trigger");
+
+        image.addEventListener("click", function () {
+
+            lightboxImage.src = this.src;
+            lightboxImage.alt = this.alt;
+
+            lightbox.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+
+        });
+
+    });
+
+
+    function closeLightbox() {
+
+        lightbox.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+        setTimeout(function () {
+            lightboxImage.src = "";
+        }, 250);
+
+    }
+
+
+    /* Close button */
+
+    closeButton.addEventListener("click", closeLightbox);
+
+
+    /* Click dark background to close */
+
+    lightbox.addEventListener("click", function (event) {
+
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+
+    });
+
+
+    /* ESC key closes lightbox */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (
+            event.key === "Escape" &&
+            lightbox.classList.contains("active")
+        ) {
+
+            closeLightbox();
+
+        }
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
