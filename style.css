@@ -802,3 +802,277 @@ font-size:1.25rem;
 }
 
 }
+
+/* ==========================================
+   CREATIVE PORTFOLIO
+   IMAGE DISPLAY + CLICK-TO-ZOOM LIGHTBOX
+========================================== */
+
+
+/* ------------------------------------------
+   1. PORTFOLIO IMAGE DISPLAY
+
+   Show the complete artwork instead of
+   aggressively cropping portfolio images.
+------------------------------------------ */
+
+.creative-card img {
+    width: 100%;
+    height: 300px;
+
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+
+    background: #f2f2f2;
+
+    cursor: zoom-in;
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+}
+
+
+/* Subtle interaction to indicate
+   that the image can be enlarged */
+
+.creative-card img:hover {
+    opacity: .92;
+}
+
+
+/* ------------------------------------------
+   2. LEARNING INTERFACE DESIGN
+
+   Preserve screenshots and UI compositions.
+------------------------------------------ */
+
+.creative-category:nth-of-type(2)
+.creative-card img {
+
+    object-fit: contain;
+
+    background:
+    linear-gradient(
+        135deg,
+        #eef3f6,
+        #ffffff
+    );
+
+    padding: 10px;
+}
+
+
+/* ------------------------------------------
+   3. 3D VISUALIZATION
+
+   Preserve complete 3D portfolio compositions.
+------------------------------------------ */
+
+.creative-category:nth-of-type(3)
+.creative-card img {
+
+    object-fit: contain;
+
+    background: #f2f2f2;
+
+    padding: 8px;
+}
+
+
+/* ------------------------------------------
+   4. CREATIVE EXPLORATION
+
+   Allow taller artwork to display naturally.
+------------------------------------------ */
+
+.creative-grid-single
+.creative-card img {
+
+    height: auto;
+
+    max-height: 520px;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    background: #f2f2f2;
+}
+
+
+/* ==========================================
+   IMAGE LIGHTBOX
+========================================== */
+
+.lightbox {
+
+    display: none;
+
+    position: fixed;
+
+    z-index: 9999;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+    rgba(0, 10, 30, .96);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 50px;
+
+    cursor: zoom-out;
+}
+
+
+/* Visible state activated by JavaScript */
+
+.lightbox.active {
+    display: flex;
+}
+
+
+/* Full-size image */
+
+.lightbox-content {
+
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 95vw;
+    max-height: 90vh;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    padding: 0;
+
+    background: transparent;
+
+    border-radius: 8px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.65);
+
+    cursor: default;
+}
+
+
+/* Close X button */
+
+.lightbox-close {
+
+    position: fixed;
+
+    top: 18px;
+    right: 30px;
+
+    z-index: 10000;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+    rgba(0,0,0,.35);
+
+    border:
+    1px solid rgba(255,255,255,.25);
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-size: 38px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+    background .2s ease,
+    color .2s ease,
+    transform .2s ease;
+}
+
+
+.lightbox-close:hover {
+
+    color: #21d4d2;
+
+    background:
+    rgba(0,0,0,.65);
+
+    transform: scale(1.08);
+}
+
+
+/* ==========================================
+   LIGHTBOX RESPONSIVE
+========================================== */
+
+@media(max-width:768px) {
+
+    .creative-card img {
+        height: 260px;
+    }
+
+    .creative-grid-single
+    .creative-card img {
+        height: auto;
+        max-height: 480px;
+    }
+
+    .lightbox {
+        padding: 25px;
+    }
+
+    .lightbox-content {
+        max-width: 96vw;
+        max-height: 86vh;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+
+        width: 44px;
+        height: 44px;
+
+        font-size: 34px;
+    }
+
+}
+
+
+@media(max-width:480px) {
+
+    .creative-card img {
+        height: 230px;
+    }
+
+    .creative-grid-single
+    .creative-card img {
+        height: auto;
+    }
+
+    .lightbox {
+        padding: 15px;
+    }
+
+}
