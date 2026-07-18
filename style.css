@@ -525,3 +525,280 @@ flex-direction:column;
 gap:15px;
 }
 }
+
+/* ==========================================
+   CREATIVE & MULTIMEDIA FOUNDATIONS
+========================================== */
+
+.creative-portfolio{
+background:
+linear-gradient(
+180deg,
+#00153d,
+#001a4d
+);
+
+padding-top:70px;
+padding-bottom:80px;
+}
+
+/* Intro text */
+
+.creative-portfolio .section-intro{
+max-width:950px;
+margin:-10px auto 55px;
+text-align:center;
+
+font-size:1.15rem;
+line-height:1.9;
+
+color:#d8e3eb;
+}
+
+
+/* Category sections */
+
+.creative-category{
+max-width:1400px;
+margin:0 auto 70px;
+}
+
+.creative-category:last-child{
+margin-bottom:0;
+}
+
+
+/* Category headings */
+
+.category-title{
+font-size:1.65rem;
+font-weight:600;
+
+margin-bottom:25px;
+padding-left:16px;
+
+border-left:4px solid #21d4d2;
+
+color:#ffffff;
+}
+
+
+/* Creative grid */
+
+.creative-grid{
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:28px;
+}
+
+
+/* Cards */
+
+.creative-card{
+background:
+rgba(255,255,255,.055);
+
+border:
+1px solid rgba(33,212,210,.18);
+
+border-radius:18px;
+
+overflow:hidden;
+
+transition:
+transform .35s ease,
+box-shadow .35s ease,
+border .35s ease;
+}
+
+.creative-card:hover{
+transform:translateY(-7px);
+
+border:
+1px solid rgba(33,212,210,.38);
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.25),
+0 0 25px rgba(33,212,210,.10);
+}
+
+
+/* Images and video */
+
+.creative-card img,
+.creative-card video{
+width:100%;
+height:260px;
+
+object-fit:cover;
+
+display:block;
+
+background:#000;
+}
+
+
+/* Card text */
+
+.creative-card-content{
+padding:22px 24px 26px;
+}
+
+.creative-card-content h4{
+font-size:1.25rem;
+font-weight:600;
+
+margin-bottom:9px;
+
+color:#ffffff;
+}
+
+.creative-card-content p{
+font-size:.95rem;
+line-height:1.7;
+
+color:#cbd6df;
+
+margin:0;
+}
+
+
+/* ==========================================
+   LEARNING INTERFACE DESIGN
+   Preserve full screenshots
+========================================== */
+
+.creative-category:nth-of-type(2)
+.creative-card img{
+
+object-fit:contain;
+
+background:
+linear-gradient(
+135deg,
+#eef3f6,
+#ffffff
+);
+
+padding:10px;
+}
+
+
+/* ==========================================
+   3D VISUALIZATION
+   Preserve portfolio compositions
+========================================== */
+
+.creative-category:nth-of-type(3)
+.creative-card img{
+
+object-fit:contain;
+
+background:#f2f2f2;
+
+padding:8px;
+}
+
+
+/* ==========================================
+   CREATIVE EXPLORATION
+========================================== */
+
+.creative-grid-single{
+grid-template-columns:
+minmax(300px,650px);
+
+justify-content:center;
+}
+
+.creative-grid-single
+.creative-card img{
+
+height:auto;
+max-height:520px;
+
+object-fit:contain;
+
+background:#f2f2f2;
+}
+
+
+/* ==========================================
+   RESPONSIVE - CREATIVE PORTFOLIO
+========================================== */
+
+@media(max-width:1200px){
+
+.creative-grid{
+grid-template-columns:
+repeat(2,1fr);
+}
+
+.creative-portfolio .section-intro{
+font-size:1.05rem;
+}
+
+}
+
+
+@media(max-width:768px){
+
+.creative-portfolio{
+padding-top:55px;
+padding-bottom:60px;
+}
+
+.creative-portfolio .section-intro{
+font-size:1rem;
+
+margin-bottom:40px;
+
+text-align:left;
+}
+
+.creative-category{
+margin-bottom:50px;
+}
+
+.category-title{
+font-size:1.4rem;
+}
+
+.creative-grid{
+grid-template-columns:1fr;
+
+gap:22px;
+}
+
+.creative-card img,
+.creative-card video{
+height:230px;
+}
+
+.creative-card-content{
+padding:20px;
+}
+
+.creative-grid-single
+.creative-card img{
+height:auto;
+}
+
+}
+
+
+@media(max-width:480px){
+
+.creative-card img,
+.creative-card video{
+height:210px;
+}
+
+.category-title{
+font-size:1.25rem;
+}
+
+}
